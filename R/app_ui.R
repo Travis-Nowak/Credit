@@ -9,10 +9,14 @@
 #' @noRd
 app_ui <- function(request) {
   fluidPage(
-    # Optionally: your golem_add_external_resources() call here
+    titlePanel("Credit Analysis App"),
+    shiny::tabsetPanel(
+      type = "tabs",
+      shiny::tabPanel("ShinyIpsum Random", mod_random_ui("my_random_module")),
+      shiny::tabPanel("Test Tab 2"),
+    )
     
-    # Now, call our random UI module once
-    mod_random_ui("my_random_module")
+    
   )
 }
 
