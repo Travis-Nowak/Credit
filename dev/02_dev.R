@@ -20,14 +20,18 @@ attachment::att_amend_desc()
 
 ## Add modules ----
 ## Create a module infrastructure in R/
-golem::add_module(name = "module_1", with_test = TRUE) # Name of the module
-golem::add_module(name = "module_2", with_test = TRUE) # Name of the module
+golem::add_module(name = "plot_data", with_test = TRUE) # Name of the module
+golem::add_module(name = "mod_seriesid", with_test = TRUE) # Name of the module
 golem::add_module(name = "module_3", with_test = TRUE) # Name of the module
 golem::add_module(name = "random", with_test = TRUE) # Name of the module
+golem::add_module(name = "data", with_test = TRUE) # Name of the module
+golem::add_module(name = "FRED_key", with_test = TRUE) # Name of the module
+golem::add_module(name = "about", with_test = TRUE) # Name of the module
+golem::add_module(name = "methodology", with_test = TRUE) # Name of the module
 
 ## Add helper functions ----
 ## Creates fct_* and utils_*
-golem::add_fct("helpers", with_test = TRUE)
+golem::add_fct("fred_pull", with_test = TRUE)
 golem::add_utils("helpers", with_test = TRUE)
 
 ## External resources

@@ -1,4 +1,4 @@
-#' module_3 UI Function
+#' methodology UI Function
 #'
 #' @description A shiny Module.
 #'
@@ -7,17 +7,20 @@
 #' @noRd 
 #'
 #' @importFrom shiny NS tagList 
-mod_module_3_ui <- function(id) {
+mod_methodology_ui <- function(id) {
   ns <- NS(id)
   tagList(
- 
+    
+    h2("Methodology"),
+    p("Let's explain. Maybe use drop-down like in the PM tool.")
+    
   )
 }
     
-#' module_3 Server Functions
+#' methodology Server Functions
 #'
 #' @noRd 
-mod_module_3_server <- function(id){
+mod_methodology_server <- function(id){
   moduleServer(id, function(input, output, session){
     ns <- session$ns
  
@@ -25,7 +28,7 @@ mod_module_3_server <- function(id){
 }
     
 ## To be copied in the UI
-# mod_module_3_ui("module_3_1")
+# mod_methodology_ui("methodology_1")
     
 ## To be copied in the server
-# mod_module_3_server("module_3_1")
+# mod_methodology_server("methodology_1")

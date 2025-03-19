@@ -7,16 +7,21 @@
 #' @import ggplot2
 #' @importFrom bslib bs_theme font_google
 #' @noRd
+
 app_ui <- function(request) {
-  fluidPage(
-    titlePanel("Credit Analysis App"),
+  shiny::fluidPage(
+    shiny::titlePanel("Markov Switching Credit App"),
+    
     shiny::tabsetPanel(
       type = "tabs",
+      shiny::tabPanel("About", mod_about_ui("my_about")),
+      shiny::tabPanel("Methodology", mod_methodology_ui("my_methodology")),
+      shiny::tabPanel("Markov Model",
+                      mod_fred_key_ui("fred_key_module"),
+                      mod_seriesid_ui("seriesid_module"),
+                      mod_plot_data_ui("plot_module")),
       shiny::tabPanel("ShinyIpsum Random", mod_random_ui("my_random_module")),
-      shiny::tabPanel("Test Tab 2"),
     )
-    
-    
   )
 }
 
