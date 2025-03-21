@@ -13,5 +13,17 @@ app_server <- function(input, output, session) {
     user_key = fred_key_rv,
     user_series = user_series_r
   )
+  
+  stored_data_r <- mod_data_storage_server(
+    id = "store_data_module",
+    user_key = fred_key_rv,
+    user_series = user_series_r
+  )
+  
+  mod_list_data_server(
+    id = "list_data_module",
+    stored_data = stored_data_r
+  )
+  
   mod_random_server("my_random_module")
 }
