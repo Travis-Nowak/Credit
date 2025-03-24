@@ -24,7 +24,7 @@ golem::add_module(name = "plot_data", with_test = TRUE) # Name of the module
 golem::add_module(name = "mod_seriesid", with_test = TRUE) # Name of the module
 golem::add_module(name = "data_storage", with_test = TRUE) # Name of the module
 golem::add_module(name = "random", with_test = TRUE) # Name of the module
-golem::add_module(name = "data", with_test = TRUE) # Name of the module
+golem::add_module(name = "hmm", with_test = TRUE) # Name of the module
 golem::add_module(name = "FRED_key", with_test = TRUE) # Name of the module
 golem::add_module(name = "about", with_test = TRUE) # Name of the module
 golem::add_module(name = "methodology", with_test = TRUE) # Name of the module

@@ -28,5 +28,10 @@ app_server <- function(input, output, session) {
     r
   )
   
+  mod_hmm_server(
+    id = "my_model",
+    r
+  )
+  
   mod_random_server("my_random_module")
 }

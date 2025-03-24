@@ -22,6 +22,7 @@ app_ui <- function(request) {
                       mod_plot_data_ui("plot_module"),
                       mod_data_storage_ui("store_data_module"),
                       mod_list_data_ui("list_data_module")),
+      shiny::tabPanel("Model", mod_hmm_ui("my_model")),
       shiny::tabPanel("ShinyIpsum Random", mod_random_ui("my_random_module")),
     )
   )
