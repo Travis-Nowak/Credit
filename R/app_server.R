@@ -23,11 +23,10 @@ app_server <- function(input, output, session) {
     r
   )
   
-#  mod_list_data_server(
-#    id = "list_data_module",
-#    r,
-#    stored_data = stored_data_r
-#  )
+  mod_list_data_server(
+    id = "list_data_module",
+    r
+  )
   
   mod_random_server("my_random_module")
 }

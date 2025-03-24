@@ -23,12 +23,12 @@ mod_list_data_server <- function(id, r) {
     ns <- session$ns
     
     output$data_list <- renderUI({
-      create_data_list_ui(stored_data(), ns)
+      create_data_list_ui(r$stored_data, ns)
     })
 
     observe({
 
-      current_series <- names(stored_data())
+      current_series <- names(r$stored_data)
       
       lapply(current_series, function(series_name) {
         delete_button_id <- paste0("delete_", series_name)
@@ -38,9 +38,9 @@ mod_list_data_server <- function(id, r) {
           button_id <- delete_button_id
           
           observeEvent(input[[button_id]], {
-            current_list <- stored_data()
+            current_list <- r$stored_data
             current_list[[current_name]] <- NULL
-            stored_data(current_list)
+            r$stored_data <- current_list
 
           }, ignoreInit = TRUE)
         })
