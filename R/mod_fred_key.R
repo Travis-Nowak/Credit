@@ -32,21 +32,20 @@ mod_fred_key_ui <- function(id) {
 #' FRED_key Server Functions
 #'
 #' @noRd 
-mod_fred_key_server <- function(id) {
+mod_fred_key_server <- function(id, r) {
   moduleServer(id, function(input, output, session) {
     
-    user_key <- reactiveVal(NULL)
+    new_key <- NULL
+    
     observeEvent(input$set_key, {
       new_key <- input$fred_key_input
       if (nzchar(new_key)) {
-        user_key(new_key)
         fredr::fredr_set_key(new_key)
         output$feedback <- shiny::renderText("API Key set for this session.")
       } else {
         output$feedback <- shiny::renderText("No key entered.")
       }
+      r$user_key <- new_key
     })
-    
-    return(reactive(user_key()))
   })
 }

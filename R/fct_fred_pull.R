@@ -9,12 +9,14 @@
 #' @return The return value, if any, from executing the function.
 #' 
 #' @noRd
-fred_pull <- function(user_key, series_id) {
+fred_pull <- function(r) {
   # set key
-  fredr::fredr_set_key(user_key)
+  fredr::fredr_set_key(r$user_key)
+  
+  
   # assign data
   data <- fredr::fredr(
-    series_id = series_id,
+    series_id = r$series_id, # Why does this not work when not calling as a function? I.e.) why doesn't r$series_id work but r$series_id() does?
     observation_start = as.Date("1900-01-01")
   )
   # clean data

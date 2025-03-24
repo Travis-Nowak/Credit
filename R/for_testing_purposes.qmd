@@ -17,3 +17,10 @@ fredr::fredr(
       tidyr::drop_na()
 ```
 
+```{r}
+library(fredr)
+library(tidyverse)
+library(dplyr)
+
+
+```

@@ -16,7 +16,7 @@ app_ui <- function(request) {
       type = "tabs",
       shiny::tabPanel("About", mod_about_ui("my_about")),
       shiny::tabPanel("Methodology", mod_methodology_ui("my_methodology")),
-      shiny::tabPanel("Markov Model",
+      shiny::tabPanel("Data",
                       mod_fred_key_ui("fred_key_module"),
                       mod_seriesid_ui("seriesid_module"),
                       mod_plot_data_ui("plot_module"),

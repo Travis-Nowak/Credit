@@ -26,19 +26,17 @@ mod_seriesid_ui <- function(id) {
 #' seriesid Server Functions
 #'
 #' @noRd 
-mod_seriesid_server <- function(id){
+mod_seriesid_server <- function(id, r){
   moduleServer(id, function(input, output, session){
     ns <- session$ns
     
-    series_id <- reactiveVal(NULL)
+    r$series_id <- NULL
     
     observeEvent(input$go_button, {
       if (nzchar(input$series_id_input)) {
-        series_id(input$series_id_input)
-        print(series_id())
+        r$series_id <- input$series_id_input
       }
     })
- return(reactive(series_id()))
   })
 }
     

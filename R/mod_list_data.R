@@ -18,7 +18,7 @@ mod_list_data_ui <- function(id) {
 #' list_data Server Functions
 #'
 #' @noRd 
-mod_list_data_server <- function(id, stored_data) {
+mod_list_data_server <- function(id, r) {
   moduleServer(id, function(input, output, session) {
     ns <- session$ns
     

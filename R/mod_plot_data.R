@@ -17,14 +17,13 @@ mod_plot_data_ui <- function(id) {
 #' plot_data Server Functions
 #'
 #' @noRd 
-mod_plot_data_server <- function(id, user_key, user_series){
+mod_plot_data_server <- function(id, r){
   moduleServer(id, function(input, output, session){
     ns <- session$ns
- 
     
     output$fred_plot <- plotly::renderPlotly({
-      req(user_key(), user_series())
-      fred_pull(user_key = user_key(), series_id = user_series())
+      req(!is.null(r$series_id))
+      fred_pull(r = r)
     })
   })
 }
