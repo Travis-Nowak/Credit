@@ -34,6 +34,8 @@ golem::add_module(name = "list_data", with_test = TRUE) # Name of the module
 ## Creates fct_* and utils_*
 golem::add_fct("fred_pull", with_test = TRUE)
 golem::add_fct("data_list", with_test = TRUE)
+golem::add_fct("fit_hmm", with_test = TRUE)
+golem::add_fct("process_data", with_test = TRUE)
 golem::add_utils("helpers", with_test = TRUE)
 
 ## External resources

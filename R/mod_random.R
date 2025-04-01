@@ -26,8 +26,6 @@ mod_random_ui <- function(id) {
 #' @noRd 
 mod_random_server <- function(id) {
   moduleServer(id, function(input, output, session) {
-    # If needed, you can assign ns <- session$ns
-    # but often you only need it if you're creating dynamic UI or referencing input IDs.
     
     # Render the random DT
     output$data_table <- DT::renderDT({
