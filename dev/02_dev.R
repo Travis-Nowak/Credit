@@ -29,6 +29,7 @@ golem::add_module(name = "FRED_key", with_test = TRUE) # Name of the module
 golem::add_module(name = "about", with_test = TRUE) # Name of the module
 golem::add_module(name = "methodology", with_test = TRUE) # Name of the module
 golem::add_module(name = "list_data", with_test = TRUE) # Name of the module
+golem::add_module(name = "example_case", with_test = TRUE) # Name of the module
 
 ## Add helper functions ----
 ## Creates fct_* and utils_*
