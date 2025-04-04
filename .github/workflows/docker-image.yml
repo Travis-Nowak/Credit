@@ -27,4 +27,4 @@ jobs:
         context: .
         file: ./Dockerfile
         push: True
-        tags: tnowak989/Credit:latest
+        tags: tnowak989/credit:latest
