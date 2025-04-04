@@ -12,7 +12,7 @@ mod_about_ui <- function(id) {
   fluidPage(
     div(style = "position: relative;",
         h2(tags$u("Hidden Markov Models")),
-        p("The purpose of this application is to allow users to model and analyze regime shifts throughout time using FRED data."),
+        p("dThe purpose of this application is to allow users to model and analyze regime shifts throughout time using FRED data."),
         
         h3("Features"),
         div(style = "overflow: hidden;",
