@@ -24,7 +24,7 @@ mod_about_ui <- function(id) {
             ),
             
             tags$img(
-              src = "inst/app/img/bull2.jpg", 
+              src = "www/bull2.png", 
               width = "90%", 
               style = "position: absolute; top: 100px; right: 0; max-width: 800px; z-index: -1; opacity: 0.5;"
             )

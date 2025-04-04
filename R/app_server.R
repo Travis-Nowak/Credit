@@ -33,5 +33,5 @@ app_server <- function(input, output, session) {
     r
   )
   
-  mod_random_server("my_random_module")
+  #mod_random_server("my_random_module")
 }

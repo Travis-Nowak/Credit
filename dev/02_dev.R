@@ -17,6 +17,24 @@
 ## Amend DESCRIPTION with dependencies read from package code parsing
 ## install.packages('attachment') # if needed.
 attachment::att_amend_desc()
+usethis::use_package("plotly")
+usethis::use_package("fredr")
+usethis::use_package("tidyr")
+usethis::use_package("shiny")
+usethis::use_package("golem")
+usethis::use_package("config")
+usethis::use_package("magrittr")
+usethis::use_package("depmixS4")
+usethis::use_package("purrr")
+usethis::use_package("dplyr")
+usethis::use_package("tidyr")
+usethis::use_package("scales")
+usethis::use_package("ggplot2")
+usethis::use_package("knitr")
+usethis::use_package("bslib")
+usethis::use_package("DT")
+
+
 
 ## Add modules ----
 ## Create a module infrastructure in R/
