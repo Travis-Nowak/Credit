@@ -9,7 +9,15 @@
 #' @noRd
 
 app_ui <- function(request) {
+  theme <- bslib::bs_theme(
+    version = 5,
+    bootswatch = "flatly",
+    base_font = font_google("Roboto"),
+    heading_font = font_google("Raleway")
+  )
+  
   shiny::fluidPage(
+    theme = theme,
     shiny::titlePanel("Markov Switching App"),
     
     shiny::tabsetPanel(
