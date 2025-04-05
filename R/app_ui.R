@@ -11,7 +11,7 @@
 app_ui <- function(request) {
   theme <- bslib::bs_theme(
     version = 5,
-    bootswatch = "flatly",
+    bootswatch = "litera",
     base_font = font_google("Roboto"),
     heading_font = font_google("Raleway")
   )

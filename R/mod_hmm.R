@@ -9,30 +9,39 @@
 #' @importFrom shiny NS tagList 
 mod_hmm_ui <- function(id) {
   ns <- NS(id)
+  
   tagList(
-    shiny::h3("Hidden Markov Model Analysis"),
-    shiny::p("We will build a model from your selected data"),
-    shiny::numericInput(
-      inputId = ns("num_states"),
-      label = "Number of States:",
-      value = 2,
-      min = 2,
-      step = 1
-    ),
-    shiny::radioButtons(
-      inputId = ns("scaling_type"),
-      label = "Summary Table Scaling:",
-      choices = c("Raw" = "raw", "Normalized" = "normalized"),
-      selected = "normalized",
-      inline = TRUE
-    ),
-    shiny::actionButton(
-      inputId = ns("fit_hmm"),
-      label = "Run HMM Model"
-    ),
-    shiny::br(), shiny::br(),
-    shiny::verbatimTextOutput(ns("hmm_summary")),
-    shiny::plotOutput(ns("state_plot"))
+    h3("Hidden Markov Model Analysis"),
+    p("We will build a model from your selected data"),
+    
+    sidebarLayout(
+      sidebarPanel(
+        numericInput(
+          inputId = ns("num_states"),
+          label = "Number of States:",
+          value = 2,
+          min = 2,
+          step = 1
+        ),
+        radioButtons(
+          inputId = ns("scaling_type"),
+          label = "Summary Table Scaling:",
+          choices = c("Raw" = "raw", "Normalized" = "normalized"),
+          selected = "normalized",
+          inline = TRUE
+        ),
+        actionButton(
+          inputId = ns("fit_hmm"),
+          label = "Run HMM Model"
+        ),
+        width = 3
+      ),
+      mainPanel(
+        verbatimTextOutput(ns("hmm_summary")),
+        plotOutput(ns("state_plot")),
+        width = 9
+      )
+    )
   )
 }
 
