@@ -112,6 +112,8 @@ mod_example_case_server <- function(id, r){
       rv$summary_raw <- result$summary_raw
       rv$summary_std <- result$summary_std
       rv$plot_data <- result$plot_data
+      
+      r$stored_data <- list()
     })
     
     output$summary_output <- renderPrint({
