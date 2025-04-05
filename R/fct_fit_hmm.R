@@ -7,9 +7,9 @@
 #' @noRd
 fit_hmm <- function(data, n_states, seed = 123) {
 
-  formula_list <- lapply(names(data)[-1], function(var) {
-    as.formula(paste(var, "~ 1"))
-  })
+  formula_list <- names(data)[-1] %>%
+    purrr::map(~ as.formula(paste(.x, "~ 1")))
+  
 
   model <- depmixS4::depmix(
     response = formula_list,

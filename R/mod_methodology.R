@@ -34,7 +34,7 @@ mod_methodology_ui <- function(id) {
                              p("Once the model is fit, each time period is assigned a most-likely hidden state. For each state, the average (mean) value of each input indicator is calculated."),
                              p("These state-level means are used to compute a 1-dimensional distance metric (via classical multidimensional scaling, or MDS), allowing us to map regimes along a -1 to +1 index."),
                              p("Regimes that are statistically similar cluster near each other, while those that are dissimilar (e.g., stress/crisis vs. expansion) lie at opposite ends of the spectrum."),
-                             p("This approach ensures that the index is driven by all input indicators collectively — not just one dominant variable.")
+                             p("This approach ensures that the index is driven by all input indicators collectively - not just one dominant variable.")
       ),
       
       bslib::accordion_panel(title = "Summary Table & Interpretation",

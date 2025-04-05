@@ -28,11 +28,13 @@ run_hmm <- function(stored_data, n_states = 2, seed = 123) {
   graph_state_means <- summary_std %>% dplyr::select(-state)
   state_means_for_graph <- scale(graph_state_means) %>% as.data.frame()
   
-  dist_matrix <- dist(state_means_for_graph)
-  mds_coords <- cmdscale(dist_matrix, k = 1)
-  mds_scaled <- scales::rescale(mds_coords, to = c(-1, 1))
-  weights <- mds_scaled
+  weights <- state_means_for_graph %>%
+    dist() %>%
+    cmdscale(k = 1) %>%
+    scales::rescale(to = c(-1, 1))
+  
   names(weights) <- summary_std$state
+  
   
   standardized$index <- weights[as.character(standardized$state)]
   standardized$date <- cleaned$date

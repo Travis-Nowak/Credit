@@ -5,7 +5,7 @@
 #' @return The return value, if any, from executing the function.
 #'
 #' @noRd
-create_data_list_ui <- function(stored_data, ns) {
+data_list <- function(stored_data, ns) {
   if (length(stored_data) == 0) {
     return(shiny::tags$p("No data series stored yet."))
   }

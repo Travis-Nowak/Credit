@@ -1,5 +1,5 @@
 testServer(
-  mod_FRED_key_server,
+  mod_fred_key_server,
   # Add here your module params
   args = list()
   , {
@@ -27,10 +27,10 @@ testServer(
 })
  
 test_that("module ui works", {
-  ui <- mod_FRED_key_ui(id = "test")
+  ui <- mod_fred_key_ui(id = "test")
   golem::expect_shinytaglist(ui)
   # Check that formals have not been removed
-  fmls <- formals(mod_FRED_key_ui)
+  fmls <- formals(mod_fred_key_ui)
   for (i in c("id")){
     expect_true(i %in% names(fmls))
   }

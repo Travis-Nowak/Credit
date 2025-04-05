@@ -12,12 +12,12 @@ mod_seriesid_ui <- function(id) {
   tagList(
     shiny::textInput(
       inputId = ns("series_id_input"),
-      label = "Enter a FRED series ID:",
+      label = "Enter FRED series:",
       width = "33%"
     ),
     shiny::actionButton(
       inputId = ns("go_button"),
-      label = "Go",
+      label = "Visualize & Store",
       style = "height: 38px;"
     )
   )
@@ -30,12 +30,33 @@ mod_seriesid_server <- function(id, r){
   moduleServer(id, function(input, output, session){
     ns <- session$ns
     
-    r$series_id <- NULL
-    
     observeEvent(input$go_button, {
-      if (nzchar(input$series_id_input)) {
-        r$series_id <- input$series_id_input
-      }
+      req(nzchar(input$series_id_input), r$user_key)
+      
+      # Set series ID reactively
+      r$series_id <- input$series_id_input
+      
+      # Pull and clean data from FRED
+      fredr::fredr_set_key(r$user_key)
+      
+      new_data <- fredr::fredr(
+        series_id = r$series_id,
+        observation_start = as.Date("1900-01-01")
+      ) %>%
+        tidyr::drop_na() %>%
+        dplyr::rename(!!paste0("value_", r$series_id) := value) %>%
+        dplyr::mutate(!!paste0("series_id_", r$series_id) := r$series_id)
+      
+      # Append to stored data
+      if (is.null(r$stored_data)) r$stored_data <- list()
+      current_list <- list(new_data)
+      names(current_list) <- r$series_id
+      r$stored_data <- append(r$stored_data, current_list)
+      
+      # Optional feedback
+      output$store_feedback <- renderText({
+        paste0("Data from series ", r$series_id, " has been stored.")
+      })
     })
   })
 }

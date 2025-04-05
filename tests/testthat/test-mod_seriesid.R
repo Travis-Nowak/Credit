@@ -1,7 +1,7 @@
 testServer(
   mod_seriesid_server,
   # Add here your module params
-  args = list()
+  args = list(r = reactiveValues())
   , {
     ns <- session$ns
     expect_true(

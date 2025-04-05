@@ -18,11 +18,6 @@ app_server <- function(input, output, session) {
     r
   )
   
-  stored_data_r <- mod_data_storage_server(
-    id = "store_data_module",
-    r
-  )
-  
   mod_list_data_server(
     id = "list_data_module",
     r
@@ -35,6 +30,4 @@ app_server <- function(input, output, session) {
   
   mod_example_case_server(id = "example_case_1",
                           r)
-  
-  #mod_random_server("my_random_module")
 }

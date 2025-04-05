@@ -10,7 +10,10 @@
 mod_data_storage_ui <- function(id) {
   ns <- NS(id)
   tagList(
-    shiny::actionButton(ns("store_data"), "Store Data"),
+    shiny::actionButton(
+      ns("store_data"),
+      "Store Data",
+      style = "height: 38px;"),
     shiny::br(),
     shiny::textOutput(ns("store_feedback"))
  

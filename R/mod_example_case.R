@@ -19,9 +19,9 @@ mod_example_case_ui <- function(id) {
     shiny::p("The table below shows the average value of each indicator within each inferred regime. These averages reveal how each regime behaves in terms of credit volatility and cost."),
     shiny::tags$ul(
       shiny::tags$li(shiny::strong("Stressed:"), " Highest VIX values and elevated AAA bond yields. This regime corresponds to periods of financial turmoil and widespread risk aversion."),
-      shiny::tags$li(shiny::strong("Accommodative:"), " VIX remains elevated but bond yields are low. This typically follows stress events and aligns with aggressive monetary easing amid ongoing uncertainty — such as post-crisis QE periods."),
+      shiny::tags$li(shiny::strong("Accommodative:"), " VIX remains elevated but bond yields are low. This typically follows stress events and aligns with aggressive monetary easing amid ongoing uncertainty such as post-crisis QE periods."),
       shiny::tags$li(shiny::strong("Loose:"), " Low volatility and relatively low credit spreads. This regime reflects times of strong investor confidence and easy financial conditions."),
-      shiny::tags$li(shiny::strong("Cautious:"), " A transitional regime — VIX is low but AAA yields are climbing. This represents late-cycle tightening or pre-stress conditions.")
+      shiny::tags$li(shiny::strong("Cautious:"), " A transitional regime; VIX is low but AAA yields are climbing. This represents late-cycle tightening or pre-stress conditions.")
     ),
     shiny::p("These patterns help explain how the model classifies hidden states, and how different credit regimes affect the joint behavior of volatility and interest rates."),
     
@@ -39,12 +39,12 @@ mod_example_case_ui <- function(id) {
     shiny::hr(),
     shiny::h4("How to Interpret the Credit Regime Chart"),
     shiny::p("This chart visualizes a one-dimensional index created by a Hidden Markov Model (HMM) trained on three credit indicators: VIX (volatility), AAA bond yields (credit cost), and the TED spread (liquidity stress)."),
-    shiny::p("Each colored background band represents a latent regime — a state that the model infers based on patterns across all three indicators. The blue line shows the model’s scaled credit index over time, ranging from -1 (easiest credit) to +1 (most stressed)."),
+    shiny::p("Each colored background band represents a latent regime: a state that the model infers based on patterns across all three indicators. The blue line shows the model's scaled credit index over time, ranging from -1 (easiest credit) to +1 (most stressed)."),
     shiny::tags$ul(
       shiny::tags$li(shiny::strong("Loose:"), " A regime with low credit spreads, low volatility, and generally strong liquidity."),
       shiny::tags$li(shiny::strong("Accommodative:"), " Intermediate state where conditions are not ultra-loose but still relatively easy."),
       shiny::tags$li(shiny::strong("Cautious:"), " Reflects early signs of stress, rising yields, or volatility without full-blown crisis."),
-      shiny::tags$li(shiny::strong("Stressed:"), " Regimes historically aligned with market dislocations — e.g., late 2008 or March 2020.")
+      shiny::tags$li(shiny::strong("Stressed:"), " Regimes historically aligned with market dislocations - e.g., late 2008 or March 2020.")
     ),
     shiny::p("This model does not predict specific events but shows when the underlying indicators jointly signal a shift in credit conditions. The closer the index is to +1, the tighter or more fragile credit markets are likely to be."),
     
@@ -123,7 +123,7 @@ mod_example_case_server <- function(id, r){
         tbl <- rv$summary_raw
       }
       
-      colnames(tbl) <- c("State", "VIXCLS", "AAA", "TEDRATE")
+      colnames(tbl) <- c("State", "mean_VIXCLS", "mean_AAA", "mean_TEDRATE")
       
       print(knitr::kable(tbl, digits = 2))
     })

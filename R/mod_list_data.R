@@ -23,7 +23,7 @@ mod_list_data_server <- function(id, r) {
     ns <- session$ns
     
     output$data_list <- renderUI({
-      create_data_list_ui(r$stored_data, ns)
+      data_list(r$stored_data, ns)
     })
 
     observe({
