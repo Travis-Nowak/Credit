@@ -55,7 +55,7 @@ mod_hmm_server <- function(id, r) {
     observeEvent(input$fit_hmm, {
       req(r$stored_data)
       
-      result <- run_model_pipeline(
+      result <- run_hmm(
         stored_data = r$stored_data,
         n_states = input$num_states,
         seed = 123
@@ -75,7 +75,7 @@ mod_hmm_server <- function(id, r) {
       })
       
       output$state_plot <- renderPlot({
-        generate_state_plot(rv$plot_data, input$num_states)
+        state_plot(rv$plot_data, input$num_states)
       })
     })
   })

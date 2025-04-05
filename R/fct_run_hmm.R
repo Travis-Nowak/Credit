@@ -5,8 +5,9 @@
 #' @return The return value, if any, from executing the function.
 #'
 #' @noRd
-run_model_pipeline <- function(stored_data, n_states = 2, seed = 123) {
+run_hmm <- function(stored_data, n_states = 2, seed = 123) {
   processed <- process_data(stored_data)
+  
   cleaned <- processed$cleaned_data
   standardized <- processed$standardized_data
   

@@ -5,7 +5,7 @@
 #' @return The return value, if any, from executing the function.
 #'
 #' @noRd
-generate_state_plot <- function(plot_data, n_states) {
+state_plot <- function(plot_data, n_states) {
   ggplot2::ggplot(plot_data, ggplot2::aes(x = date)) +
     ggplot2::geom_rect(
       data = plot_data %>% dplyr::filter(!is.na(dplyr::lead(date))),
