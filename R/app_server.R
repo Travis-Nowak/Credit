@@ -33,5 +33,8 @@ app_server <- function(input, output, session) {
     r
   )
   
+  mod_example_case_server(id = "example_case_1",
+                          r)
+  
   #mod_random_server("my_random_module")
 }

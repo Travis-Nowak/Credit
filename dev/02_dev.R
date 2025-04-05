@@ -52,6 +52,9 @@ golem::add_module(name = "example_case", with_test = TRUE) # Name of the module
 ## Add helper functions ----
 ## Creates fct_* and utils_*
 golem::add_fct("fred_pull", with_test = TRUE)
+golem::add_fct("get_transition_probabilities", with_test = TRUE)
+golem::add_fct("run_hmm", with_test = TRUE)
+golem::add_fct("state_plot", with_test = TRUE)
 golem::add_fct("data_list", with_test = TRUE)
 golem::add_fct("fit_hmm", with_test = TRUE)
 golem::add_fct("process_data", with_test = TRUE)
