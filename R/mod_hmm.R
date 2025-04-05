@@ -53,7 +53,7 @@ mod_hmm_server <- function(id, r) {
     output$state_plot <- renderPlot({ })
 
     observeEvent(input$fit_hmm, {
-      req(r$stored_data)
+      req(!is.null(r$stored_data) && length(r$stored_data) > 0)
       
       result <- run_hmm(
         stored_data = r$stored_data,
