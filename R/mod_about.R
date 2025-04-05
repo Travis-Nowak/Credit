@@ -19,24 +19,17 @@ mod_about_ui <- function(id) {
             tags$ul(
               tags$li("Cycle Index: Identify periods of expansion, contraction, and crisis using HMM-based regime detection."),
               tags$li("Dynamic Data Integration: Automatically process and standardize FRED time series to compare key market indicators."),
-              tags$li("Interactive Visualization: View a regime index that ranges from -1 to +1, indicating shifts in credit conditions over time."),
+              tags$li("Interactive Visualization: View a regime index that ranges from -1 to +1, indicating shifts in market conditions over time."),
               tags$li("Modular Analysis: Easily switch between raw and normalized summaries to inspect state-level averages.")
-            ),
-            
-            tags$img(
-              src = "www/bull2.png", 
-              width = "90%", 
-              style = "position: absolute; top: 100px; right: 0; max-width: 800px; z-index: -1; opacity: 0.5;"
             )
-            
         )
     ),
     
     h4("Regime Detection and Analysis"),
-    p("Using a Hidden Markov Model, the app identifies latent regimes in the credit cycle based on selected FRED indicators. These regimes are then translated into a credit cycle index that provides a quantitative measure of market conditions, ranging from -1 (expansion) to +1 (stress/crisis)."),
+    p("Using a Hidden Markov Model, the app identifies latent regimes in the examined data based on selected FRED indicators. These regimes are then translated into a cycle index that provides a quantitative measure of market conditions, ranging from -1 to +1."),
     
     h4("Interactive Visualization"),
-    p("Users can toggle between raw and normalized summary tables, adjust model parameters, and view the evolution of the credit cycle index over time. This dynamic visualization aids in understanding how current market conditions compare with historical regimes."),
+    p("Users can toggle between raw and normalized summary tables, adjust model parameters, and view the evolution of the cycle index over time. This dynamic visualization aids in understanding how current market conditions compare with historical regimes."),
     
     div(style = "bottom: 0; width: 100%; text-align: center; padding: 10px;",
         HTML(
